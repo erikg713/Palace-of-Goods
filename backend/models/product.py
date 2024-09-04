@@ -6,6 +6,7 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Float, nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    owner = db.relationship('User', backref=db.backref('products', lazy=True))
 
     def serialize(self):
         return {
@@ -13,5 +14,8 @@ class Product(db.Model):
             'name': self.name,
             'description': self.description,
             'price': self.price,
-            'owner': self.owner.serialize()
+            'owner': self.owner.email
         }
+
+    def __repr__(self):
+        return f'<Product {self.name}>'
