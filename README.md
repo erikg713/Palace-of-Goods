@@ -28,5 +28,5 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/palace-of-goods.git
+git clone https://github.com/erikg713/palace-of-goods.git
 cd palace-of-goods
