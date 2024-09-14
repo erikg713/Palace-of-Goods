@@ -6,6 +6,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palace of Goods</title>
+    <script> 
+        // Authenticate the user, and get permission to request payments from them
+        const scopes = ['payments','username'];
+
+        // Read more about this callback in the SDK reference:
+        function onIncompletePaymentFound(payment) { 
+            console.log('incomplete payment found')
+            paymentId = payment.identifier
+            txid = payment.transaction.txid
+            $.post('/payment/complete',
+                    {
+                        paymentId: paymentId,
+                        txid: txid,
+                        debug: 'cancel'
+                    }
+                )
+        };
+        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+          console.log(`Hi there! You're ready to make payments!`)
+          const accessToken = auth.accessToken
+        }).catch(function(error) {
+          console.error(error);
+        });
+    </script>
   </head>
   <body>
     <div id="root"></div>
