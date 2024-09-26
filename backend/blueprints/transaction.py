@@ -5,7 +5,7 @@ from models.product import Product
 
 transaction_bp = Blueprint('transaction', __name__)
 
-pi_web3 = Web3(Web3.HTTPProvider("https://your-pi-network-node"))
+pi_web3 = Web3(Web3.HTTPProvider("https://sandbox.minepi.com/app/palace-of-goods"))
 
 @transaction_bp.route('/purchase', methods=['POST'])
 @login_required
