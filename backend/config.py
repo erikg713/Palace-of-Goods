@@ -4,7 +4,7 @@ class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'your_secret_key')
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    PI_NETWORK_URL = os.getenv('PI_NETWORK_URL', 'https://your-pi-network-node')
+    PI_NETWORK_URL = os.getenv('PI_NETWORK_URL', 'https://sandbox.minepi.com/app/palace-of-goods')
 
 config = {
     'default': Config
