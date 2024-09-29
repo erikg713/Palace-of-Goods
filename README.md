@@ -173,12 +173,3 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
-### Tips for Your README
-
-1. **Keep It Updated**: Ensure that the information is accurate and reflects any changes made to the project.
-2. **Clarity**: Use clear language to help users understand how to install and use your application.
-3. **Sections**: You can add more sections as needed, like FAQ, Troubleshooting, etc.
-4. **Screenshots**: Consider adding screenshots or GIFs to visually demonstrate the application.
-
-Feel free to customize any part of the template to better fit your project! If you need specific details or further adjustments, let me know!
