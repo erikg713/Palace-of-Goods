@@ -8,6 +8,7 @@
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Configuration](#configuration)
 - [File Structure](#file-structure)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
@@ -20,6 +21,7 @@
 - Secure transactions with Pi Network integration
 - Mobile-responsive design
 - Modular and maintainable codebase using Flask Blueprints
+- Error handling and input validation for security
 
 ## Technologies
 
@@ -34,12 +36,17 @@
 
 ### Prerequisites
 
+Ensure you have the following installed on your machine:
+
 - Python 3.x
-- Node.js and npm
-- PostgreSQL
+- Node.js (version 14.x or later)
+- npm (Node Package Manager)
+- PostgreSQL (latest version)
 - Docker (optional, for containerization)
 
 ### Clone the Repository
+
+Open your terminal and run the following commands:
 
 ```bash
 git clone https://github.com/erikg713/Palace-of-goods.git
@@ -48,13 +55,13 @@ cd Palace-of-goods
 
 ### Backend Setup
 
-1. Navigate to the backend directory:
+1. **Navigate to the backend directory:**
 
     ```bash
     cd backend
     ```
 
-2. Create a virtual environment and activate it:
+2. **Create a virtual environment and activate it:**
 
     ```bash
     pip install virtualenv
@@ -65,17 +72,24 @@ cd Palace-of-goods
     source venv/bin/activate
     ```
 
-3. Install dependencies:
+3. **Install dependencies:**
 
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Set up your PostgreSQL database:
+4. **Set up your PostgreSQL database:**
 
-   - Create a new database and update your database configuration in `app/config.py`.
+   - Create a new PostgreSQL database named `palace_of_goods`.
+   - Update your database configuration in `app/config.py` as follows:
 
-5. Run database migrations:
+    ```python
+    SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost/palace_of_goods'
+    ```
+
+   Replace `username` and `password` with your PostgreSQL credentials.
+
+5. **Run database migrations:**
 
     ```bash
     flask db upgrade
@@ -83,35 +97,56 @@ cd Palace-of-goods
 
 ### Frontend Setup
 
-1. Navigate to the frontend directory:
+1. **Navigate to the frontend directory:**
 
     ```bash
     cd frontend
     ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 
     ```bash
     npm install
     ```
 
-3. Start the React application:
+3. **Start the React application:**
 
     ```bash
     npm start
     ```
 
+### Docker Setup (Optional)
+
+If you want to run the application using Docker, ensure you have Docker installed. You can start the services using the following command in the root directory of the project:
+
+```bash
+docker-compose up
+```
+
 ## Usage
 
-- To run the backend server:
+- **To run the backend server:**
 
     ```bash
     flask run
     ```
 
-- The application can be accessed at:
+- **The application can be accessed at:**
   - Frontend: `http://localhost:3000`
   - Backend: `http://localhost:5000`
+
+## Configuration
+
+### Environment Variables
+
+Create a `.env` file in the backend directory to manage sensitive information. Here’s an example configuration:
+
+```plaintext
+FLASK_ENV=development
+FLASK_APP=manage.py
+DATABASE_URL=postgresql://username:password@localhost/palace_of_goods
+JWT_SECRET_KEY=your_jwt_secret_key
+```
 
 ## File Structure
 
@@ -176,4 +211,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Feel free to modify this as needed or let me know if you would like to add more specific sections or details!
+Feel free to modify any sections or code snippets according to your specific project requirements. Let me know if there's anything else you would like to add or change!
