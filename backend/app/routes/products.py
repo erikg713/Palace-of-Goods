@@ -1,15 +1,17 @@
-from flask import request, jsonify
-from services.product_service import ProductService
-from routes import products
+from flask import Blueprint, request, jsonify
+from app.models import Product, db
 
-@products.route('/products', methods=['GET'])
+products = Blueprint('products', __name__)
+
+@products.route('/api/products', methods=['GET'])
 def get_products():
-    products = ProductService.get_all_products()
-    return jsonify({'success': True, 'products': products}), 200
+    all_products = Product.query.all()
+    return jsonify([{'id': p.id, 'name': p.name, 'price': p.price} for p in all_products]), 200
 
-@products.route('/products', methods=['POST'])
+@products.route('/api/products', methods=['POST'])
 def create_product():
-    data = request.json
-    product = ProductService.create_product(data)
-    return jsonify({'success': True, 'product': product}), 201
-
+    data = request.get_json()
+    new_product = Product(name=data['name'], price=data['price'])
+    db.session.add(new_product)
+    db.session.commit()
+    return jsonify({"message": "Product created"}), 201
