@@ -1,24 +1,27 @@
 version: '3.8'
+
 services:
   backend:
     build: ./backend
     ports:
       - "5000:5000"
     environment:
-      - SECRET_KEY=your-secret-key
-      - JWT_SECRET_KEY=your-jwt-secret
-      - DATABASE_URL=postgresql://username:password@db/palace_of_goods
-      - PI_NETWORK_API_KEY=your-pi-network-api-key
-    depends_on:
-      - db
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: palace_of_goods
+      - DATABASE_URL=postgresql://user:password@db:5432/dbname
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - ./backend:/app
 
-volumes:
-  postgres-data:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dbname
+    ports:
+      - "5432:5432"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
