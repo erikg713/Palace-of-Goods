@@ -7,6 +7,21 @@ import SellProduct from './components/SellProduct';
 import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
+// src/App.js
+import React from 'react';
+import RecursionLevel from './components/RecursionLevel';
+
+const App = () => {
+  return (
+    <div className="App">
+      <h1>Welcome to CodeQuest!</h1>
+      <RecursionLevel />
+      {/* Other components can be added here */}
+    </div>
+  );
+};
+
+export default App;
 
 function App() {
   return (
