@@ -4,6 +4,34 @@
 
 ## Project Structure
 
+Palace-of-Goods/
+│
+├── frontend/                # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/      # UI components
+│   │   ├── pages/           # Views for pages like Home, Product, Profile
+│   │   ├── services/        # API calls to Flask backend
+│   │   ├── App.js           # Main App Component
+│   │   └── index.js         # Entry point
+│   └── package.json
+│
+├── backend/                 # Flask backend
+│   ├── app/
+│   │   ├── __init__.py      # App factory and Blueprint registration
+│   │   ├── auth/            # Auth Blueprint for login/register
+│   │   ├── products/        # Products Blueprint for CRUD operations
+│   │   ├── config.py        # Configuration file (e.g., DB setup)
+│   │   ├── models.py        # Database models (SQLAlchemy)
+│   │   └── utils.py         # Helper functions (e.g., JWT, Pi Network)
+│   ├── migrations/          # Database migrations
+│   ├── Dockerfile
+│   ├── requirements.txt     # Backend dependencies
+│   └── wsgi.py              # WSGI entry point for deployment
+├── docker-compose.yml       # For containerizing frontend/backend
+└── README.md
+
+
 - **Frontend**: React-based application providing the user interface for the marketplace.
 - **Backend**: Flask-based API handling user authentication, product management, and transactions.
 - **Docker**: Containerization for both frontend and backend.
