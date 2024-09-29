@@ -207,8 +207,6 @@ Contributions are welcome! Please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License and uses the Pi-sdk license. see the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to modify any sections or code snippets according to your specific project requirements. Let me know if there's anything else you would like to add or change!
