@@ -109,7 +109,9 @@ cd Palace-of-goods
     flask run
     ```
 
-- The application can be accessed at `http://localhost:3000` for the frontend and `http://localhost:5000` for the backend.
+- The application can be accessed at:
+  - Frontend: `http://localhost:3000`
+  - Backend: `http://localhost:5000`
 
 ## File Structure
 
@@ -139,7 +141,6 @@ Palace-of-goods/
 │   │   └── index.js            # Entry point for React app
 ├── docker-compose.yml           # Docker configuration
 └── README.md                   # Project documentation
-
 ```
 
 ## API Endpoints
@@ -163,13 +164,16 @@ Palace-of-goods/
 
 Contributions are welcome! Please follow these steps:
 
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a Pull Request
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/YourFeature`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/YourFeature`.
+5. Open a Pull Request.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+
+---
+
+Feel free to modify this as needed or let me know if you would like to add more specific sections or details!
