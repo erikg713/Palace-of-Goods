@@ -1,6 +1,10 @@
 from flask import Flask
 from .config import Config
 from .routes import auth_bp, products_bp, transactions_bp  # Update with new routes
+from .routes.auth import auth_bp
+from .routes.products import products_bp
+from .routes.transactions import transactions_bp
+
 
 def create_app():
     app = Flask(__name__)
