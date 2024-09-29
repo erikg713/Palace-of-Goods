@@ -100,11 +100,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For inquiries or feedback, please contact the project maintainer:
 
 - Name: Erik G.
-- Email: [your_email@example.com]
+- Email: [erikgordon985@gmail.com]
 ```
-
-### Customization
-- Replace `your_email@example.com` with your actual email address or preferred contact method.
-- Adjust any sections as necessary to fit your project's specifics or your preferred style.
-
-This README should provide users and developers with a clear understanding of how to get started with the Palace of Goods frontend. If you need any changes or additional sections, let me know!
