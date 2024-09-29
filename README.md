@@ -117,13 +117,29 @@ cd Palace-of-goods
 Palace-of-goods/
 ├── backend/
 │   ├── app/
-│   ├── requirements.txt
-│   └── manage.py
+│   │   ├── __init__.py         # Initializes the Flask app
+│   │   ├── config.py           # Configuration settings
+│   │   ├── models.py           # Database models
+│   │   ├── routes/             # Blueprint routes
+│   │   │   ├── __init__.py     # Initializes the routes package
+│   │   │   ├── auth.py         # Authentication routes
+│   │   │   ├── products.py      # Product-related routes
+│   │   │   └── transactions.py   # Transaction-related routes
+│   │   ├── services/           # Business logic and services
+│   │   └── migrations/         # Database migrations
+│   ├── requirements.txt         # Python dependencies
+│   └── manage.py                # Entry point for running the app
 ├── frontend/
-│   ├── public/
-│   └── src/
-├── docker-compose.yml
-└── README.md
+│   ├── public/                 # Static files (index.html, favicon, etc.)
+│   ├── src/                    # React app source files
+│   │   ├── components/         # Reusable React components
+│   │   ├── pages/              # Page components
+│   │   ├── utils/              # Utility functions
+│   │   ├── App.js              # Main app component
+│   │   └── index.js            # Entry point for React app
+├── docker-compose.yml           # Docker configuration
+└── README.md                   # Project documentation
+
 ```
 
 ## API Endpoints
