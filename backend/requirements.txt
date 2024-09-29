@@ -8,3 +8,4 @@ Flask
 Flask-SQLAlchemy
 Flask-Migrate
 Flask-JWT-Extended
+pi_sdk
