@@ -1,7 +1,7 @@
 {
-  "name": "palace-of-goods-frontend",
+  "name": "palace-of-goods",
   "version": "1.0.0",
-  "description": "Palace of Goods Frontend - A Web3 Marketplace using React and Pi Network Integration",
+  "description": "Palace of Goods - A Web3 Marketplace using React and Pi Network Integration",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
