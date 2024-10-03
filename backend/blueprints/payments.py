@@ -3,7 +3,7 @@ from flask import Blueprint, request, jsonify
 from pi_sdk import PiNetwork
 
 # Initialize the PiNetwork SDK
-pi = PiNetwork(api_key="YOUR_PI_API_KEY")
+pi = PiNetwork(api_key="mhomkfhoxplgocenvcxpl3icbptp50cfrsujpqd1t9ejvmtc0a0r0l1l0xpdfnmv")
 
 # Create a Blueprint for payments
 payments_bp = Blueprint('payments', __name__)
