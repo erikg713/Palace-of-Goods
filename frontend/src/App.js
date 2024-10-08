@@ -1,19 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import ProductPage from './pages/ProductPage';
+import Profile from './pages/Profile';
+import Checkout from './pages/Checkout';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import Footer from './components/Footer';
 
 function App() {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-            </Switch>
-        </Router>
-    );
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;
