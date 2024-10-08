@@ -1,32 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { getProfile } from '../services/authService';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function Profile() {
-  const [profile, setProfile] = useState(null);
+const Profile = () => {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const response = await getProfile();
-        setProfile(response.data);
-      } catch (error) {
-        console.error('Error fetching profile:', error);
-      }
-    };
-
-    fetchProfile();
+    // Fetch user data from Pi Network or your backend
+    axios.get('/api/user/profile')
+      .then(response => setUser(response.data))
+      .catch(error => console.error('Error fetching user profile:', error));
   }, []);
 
-  return profile ? (
-    <div className="container">
-      <h1>Profile</h1>
-      <p>Email: {profile.email}</p>
-      <p>Wallet Address: {profile.wallet_address}</p>
+  if (!user) return <div>Loading...</div>;
+
+  return (
+    <div className="profile-page">
+      <h1>{user.username}'s Profile</h1>
+      <p>Email: {user.email}</p>
+      <p>Pi Balance: {user.piBalance}</p>
+      {/* Add functionality to update user info */}
     </div>
-  ) : (
-    <div className="container">Loading...</div>
   );
-}
+};
 
 export default Profile;
-
